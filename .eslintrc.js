@@ -4,17 +4,17 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: "module",
     ecmaFeatures: {
-      jsx: true // Allows for the parsing of JSX
+      jsx: true
     },
     settings: {
       react: {
-        version: "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+        version: "17.*"
       }
     },
   },
   extends: [
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   rules: {},
