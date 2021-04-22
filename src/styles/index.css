@@ -1,8 +1,12 @@
 @import '~antd/dist/antd.css';
 
+html {
+  font-size: 10px;
+}
+
 html, body {
   color: #FFFFFF;
-  background-color: #2D303E;
+  background-color: #252836;
 }
 
 body {

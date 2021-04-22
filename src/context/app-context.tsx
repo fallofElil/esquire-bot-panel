@@ -15,6 +15,7 @@ export const initialValues: AppContextValue = {
 export const AppContext = createContext<AppContextValue>(initialValues)
 
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export function AppContextProvider(props: ContextWithChildren) {
   const [headerTitle, setHeaderTitle] = useState<string>('');
 
