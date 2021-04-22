@@ -17,5 +17,7 @@ module.exports = {
     "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
-  rules: {},
+  rules: {
+    "react/prop-types": "off"
+  },
 };
