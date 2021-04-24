@@ -1,7 +1,9 @@
 import React, { useEffect, useContext } from 'react';
+import { Switch, Route } from 'react-router-dom';
 import { Layout } from "antd";
 import styled from "styled-components";
 
+import {AppRoutes} from "./navigation/routes";
 import RootLayout from "./layout/root-layout";
 import Sidebar from "./navigation/sidebar";
 import Header from "./navigation/header";
@@ -22,16 +24,21 @@ function App(): JSX.Element {
   }, [])
 
   return (
-    <RootLayout>
-      <Sidebar>Боковое меню</Sidebar>
-      <Layout>
-        <Header />
-        <StyledContentWrapper>
-          Основной контент
-        </StyledContentWrapper>
-        <Footer>Подвал</Footer>
-      </Layout>
-    </RootLayout>
+      <RootLayout>
+        <Sidebar />
+        <Layout>
+          <Header />
+          <StyledContentWrapper>
+            <p>Основной контент</p>
+            <Switch>
+              {AppRoutes.map(route =>
+                <Route key={route.path} exact path={route.path} component={route.component} />
+              )}
+            </Switch>
+          </StyledContentWrapper>
+          <Footer>Подвал</Footer>
+        </Layout>
+      </RootLayout>
   );
 }
 
