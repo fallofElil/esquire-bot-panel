@@ -29,7 +29,6 @@ function App(): JSX.Element {
         <Layout>
           <Header />
           <StyledContentWrapper>
-            <p>Основной контент</p>
             <Switch>
               {AppRoutes.map(route =>
                 <Route key={route.path} exact path={route.path} component={route.component} />

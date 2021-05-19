@@ -11,6 +11,7 @@ export enum paths {
 export type AppRoute = {
   path: paths;
   label: string;
+  // eslint-disable-next-line
   component: ComponentType<RouteComponentProps<any>> | ComponentType<any>;
 }
 

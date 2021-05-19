@@ -34,6 +34,7 @@ const IconWrapper = styled.div<{ active: boolean }>`
   height: 56px;
   color: ${props => props.active ? '#FFFFFF' : colors.primary};
   background-color: ${props => props.active ? colors.primary : colors.darkPrimary};
+  box-shadow: ${props => props.active ? '0px 8px 24px rgba(234, 124, 105, 0.32)' : 'none'};
   border-radius: 8px;
 `
 
