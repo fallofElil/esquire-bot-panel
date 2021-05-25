@@ -1,10 +1,11 @@
-import React, { FC, useState } from 'react';
+import React, { FC, useState, useContext, useEffect } from 'react';
 import {Space} from "antd";
 import styled from "styled-components";
 import {FormatPainterOutlined} from '@ant-design/icons';
 import { ColorPicker, useColor } from "react-color-palette";
 import 'react-color-palette/lib/css/styles.css';
 import Button from "../../../common/button";
+import {EmbeddingContext} from "../../embedding-context";
 
 const StyledPicker = styled(ColorPicker)`
   position: absolute;
@@ -50,8 +51,13 @@ const ColorCell = styled.div<{ color: string }>`
 `
 
 const EmbeddingColorPalette: FC = () => {
-  const [color, setColor] = useColor('hex', '#121212');
+  const {changeIndicatorColor} = useContext(EmbeddingContext);
+  const [color, setColor] = useColor('hex', '#8275e3');
   const [showPalette, setShowPalette] = useState<boolean>(false);
+
+  useEffect(() => {
+    changeIndicatorColor(color.hex);
+  }, [color])
 
   return (
     <>
