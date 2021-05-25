@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React, { FC, useContext, useEffect } from 'react';
 import {AppContext} from "../../context/app-context";
 
-const MainPage = () => {
+const MainPage: FC = () => {
   const { changeHeaderTitle } = useContext(AppContext);
 
   useEffect(() => {
