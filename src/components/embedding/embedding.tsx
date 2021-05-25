@@ -1,33 +1,40 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import styled from "styled-components";
-import {Row, Col} from "antd";
-import {Form} from "antd";
-
-import FormItem from "../common/form-item";
 import Input from "../common/input";
-import {colors} from "../../constants/styles";
+import FormItem from "../common/form-item";
+import {EmbeddingContext} from "./embedding-context";
+import {Input as AntInput} from "antd";
 
-const StyledForm = styled(Form)`
-  padding: 1rem;
-  background-color: ${colors.darkPrimary};
-  border-radius: 8px;
+type WrapperProps = {
+  indicatorColor: string;
+};
+
+const StyledWrapper = styled.section<WrapperProps>`
+  padding: 1.5rem;
+  
+  &::before {
+    content: "";
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 4px;
+    background: ${props => props.indicatorColor};
+  }
 `;
 
 const Embedding: FC = () => {
-  const {useForm} = Form;
-
-  const [form] = useForm();
+  const { indicatorColor } = useContext(EmbeddingContext);
+  const { TextArea } = AntInput;
 
   return (
-    <Row>
-      <Col xs={24} sm={24} md={24} lg={16} xl={16} xxl={16}>
-        <StyledForm form={form} layout="vertical">
-          <FormItem name="description" labelText="Описание">
-            <Input placeholder="Введите краткое описание" />
-          </FormItem>
-        </StyledForm>
-      </Col>
-    </Row>
+    <StyledWrapper indicatorColor={indicatorColor}>
+      <FormItem name="author-name">
+        <Input placeholder="Имя автора" />
+      </FormItem>
+      <FormItem name="embedding-content" label="Заголовок">
+        <TextArea placeholder="Содержимое..." />
+      </FormItem>
+    </StyledWrapper>
   );
 }
 

@@ -36,6 +36,10 @@ const IconWrapper = styled.div<{ active: boolean }>`
   background-color: ${props => props.active ? colors.primary : colors.darkPrimary};
   box-shadow: ${props => props.active ? '0px 8px 24px rgba(234, 124, 105, 0.32)' : 'none'};
   border-radius: 8px;
+  
+  &:hover {
+    color: #FFFFFF;
+  }
 `
 
 const StyledChamferWrapper = styled.div`
