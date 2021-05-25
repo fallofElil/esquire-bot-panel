@@ -5,6 +5,7 @@ import {colors} from "../../constants/styles";
 import FormItem from "../common/form-item";
 import Input from "../common/input";
 import Embedding from "./embedding";
+import EmbeddingColorPalette from "./components/color-palette";
 
 const StyledForm = styled(Form)`
   padding: 1rem;
@@ -25,6 +26,7 @@ const EmbeddingBaseWrapper: FC = () => {
             <Input placeholder="Введите краткое описание" />
           </FormItem>
           <Embedding />
+          <EmbeddingColorPalette />
         </StyledForm>
       </Col>
     </Row>

@@ -22,19 +22,31 @@ const StyledWrapper = styled.section<WrapperProps>`
   }
 `;
 
+const StyledTitleLabel = styled.h4`
+  margin-bottom: 8px;
+  font-size: 1.4rem;
+  line-height: 1.5715em;
+  color: #FFFFFF;
+`
+
 const Embedding: FC = () => {
   const { indicatorColor } = useContext(EmbeddingContext);
   const { TextArea } = AntInput;
 
   return (
-    <StyledWrapper indicatorColor={indicatorColor}>
-      <FormItem name="author-name">
-        <Input placeholder="Имя автора" />
-      </FormItem>
-      <FormItem name="embedding-content" label="Заголовок">
-        <TextArea placeholder="Содержимое..." />
-      </FormItem>
-    </StyledWrapper>
+    <>
+      <StyledTitleLabel>
+        Встраивание
+      </StyledTitleLabel>
+      <StyledWrapper indicatorColor={indicatorColor}>
+        <FormItem name="author-name">
+          <Input placeholder="Имя автора" />
+        </FormItem>
+        <FormItem name="embedding-content" label="Заголовок">
+          <TextArea placeholder="Содержимое..." />
+        </FormItem>
+      </StyledWrapper>
+    </>
   );
 }
 
