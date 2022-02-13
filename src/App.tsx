@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Layout } from "antd";
 import styled from "styled-components";
 
@@ -22,11 +22,15 @@ function App(): JSX.Element {
         <Layout>
           <Header />
           <StyledContentWrapper>
-            <Switch>
-              {AppRoutes.map(route =>
-                <Route key={route.path} exact path={route.path} component={route.component} />
-              )}
-            </Switch>
+            <Routes>
+              { AppRoutes.map(route =>
+                <Route
+                  key={ route.path } 
+                  path={ route.path }
+                  element={ route.element }
+                />
+              ) }
+            </Routes>
           </StyledContentWrapper>
           <Footer>Подвал</Footer>
         </Layout>

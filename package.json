@@ -2,9 +2,6 @@
   "name": "esquire-bot-panel",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "14.*"
-  },
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@testing-library/jest-dom": "^5.16.2",
@@ -31,7 +28,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint \"**/*.{js,ts,tsx}\" --quiet --fix",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\" --quiet --fix",
     "prepare": "husky install"
   },
   "eslintConfig": {

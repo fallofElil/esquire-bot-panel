@@ -68,8 +68,7 @@ const EmbeddingColorPalette: FC = () => {
       </Space>
 
       {showPalette && <PaletteWrapper>
-        <StyledPicker width={350} height={150} hideHSB
-                     color={color} onChange={setColor} dark />
+        <StyledPicker width={350} height={150} color={color} onChange={setColor} dark />
         <StyledBtnClose onClick={() => setShowPalette(false)}>
           x
         </StyledBtnClose>

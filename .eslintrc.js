@@ -1,23 +1,21 @@
 module.exports = {
-  parser: "@typescript-eslint/parser",
+  root: true,
+  plugins: ['react', 'prettier', '@typescript-eslint'],
+  rules: {
+    'react/prop-types': 'off',
+  },
+  parser: '@typescript-eslint/parser',
   parserOptions: {
-    ecmaVersion: 2020,
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
     ecmaFeatures: {
       jsx: true
     },
     settings: {
       react: {
-        version: "detect"
+        version: '17.0.2',
       }
     },
-  },
-  extends: [
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier"
-  ],
-  rules: {
-    "react/prop-types": "off"
+    project: './tsconfig.json',
   },
 };

@@ -1,5 +1,5 @@
-import {ComponentType} from 'react';
-import {RouteComponentProps} from "react-router";
+import React from 'react'
+import { RouteProps } from 'react-router-dom';
 
 import MainPage from "../pages/main";
 import EmbeddingPage from "../pages/embedding";
@@ -10,22 +10,20 @@ export enum paths {
   EMBEDDING = '/embedding',
 }
 
-export type AppRoute = {
+export type AppRoute = RouteProps & {
   path: paths;
   label: string;
-  // eslint-disable-next-line
-  component: ComponentType<RouteComponentProps<any>> | ComponentType<any>;
 }
 
 export const AppRoutes: AppRoute[] = [
   {
     path: paths.ROOT,
     label: PageTitles.ROOT,
-    component: MainPage,
+    element: <MainPage/>,
   },
   {
     path: paths.EMBEDDING,
     label: PageTitles.EMBEDDING,
-    component: EmbeddingPage,
+    element: <EmbeddingPage/>,
   }
 ];
